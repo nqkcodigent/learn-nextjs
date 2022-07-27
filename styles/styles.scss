@@ -7,6 +7,41 @@
   background-image: url("../public/home-bg.jpg");
   color: #fff;
   font-weight: bold;
+  .translate-list {
+    position: absolute;
+    background: transparent;
+    border: none;
+    outline: none;
+    right: 20px;
+    top: 10px;
+    .dropdown-content {
+      background-color: #999;
+      margin-top: 10px;
+      border-radius: 10px 20px 10px 15px;
+    }
+    .dropdownBtn {
+      text-align: left;
+      border: 1px solid #fff;
+      padding: 5px 20px 5px 5px;
+      cursor: pointer;
+      border-radius: 10px 20px 10px 15px;
+    }
+    .translate-item {
+      text-align: left;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #fff;
+      width: 90%;
+      margin-left: 5%;
+      &:last-child {
+        border-bottom: none;
+      }
+      a {
+        color: #1a1a1a;
+        text-transform: capitalize;
+      }
+    }
+  }
   .content {
     width: 66.66666667%;
     h1 {
@@ -17,9 +52,8 @@
       padding: 25px 35px;
       margin: 30px 0;
     }
-    h2,
-    h3 {
-      padding: 25px 0;
+    p {
+      padding: 20px 0;
     }
   }
 }
@@ -29,9 +63,10 @@
   color: #ffffff;
   .content {
     gap: 30px;
+    justify-content: space-between;
     padding: 50px 0;
     .col {
-      width: 33.3333333%;
+      width: 30%;
       list-style: none;
       text-align: start;
       .col-title {
@@ -58,4 +93,283 @@
       }
     }
   }
+}
+.section-about {
+  background: #111;
+  color: #fff;
+  .row {
+    align-items: end;
+    gap: 40px;
+  }
+  .col-1 {
+    p {
+      padding: 10px 0;
+      color: #999;
+    }
+    h4 {
+      padding: 15px 0;
+      color: #d43f52;
+    }
+  }
+  .col-2 {
+    span {
+      color: #ffffff;
+      font-weight: bold;
+      display: block;
+      padding-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+    .process {
+      background-color: #fff;
+      height: 5px;
+      font-size: 12px;
+      line-height: 20px;
+      color: #fff;
+      text-align: center;
+      box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+      width: 100%;
+      position: relative;
+      margin: 8px 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #d43f52;
+        width: 95%;
+        height: inherit;
+      }
+      &:nth-child(4) {
+        &::after {
+          width: 80%;
+        }
+      }
+      &:nth-child(6) {
+        &::after {
+          width: 70%;
+        }
+      }
+      &:last-child {
+        &::after {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+.section-postfolio {
+  background: #1a1a1a;
+  text-align: center;
+  h2 {
+    padding-bottom: 50px;
+  }
+  .row {
+    gap: 30px;
+    justify-content: space-between;
+    .w-30 {
+      width: 31%;
+    }
+    .w-50 {
+      width: 48%;
+    }
+    .img-container {
+      position: relative;
+      &:hover .portfolio-overlay {
+        cursor: pointer;
+        opacity: 0.8;
+        transform: scale(0.9);
+        overflow: hidden;
+        position: absolute;
+      }
+    }
+    .portfolio-overlay {
+      background: #d43f52;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.4s ease-in-out;
+      figcaption {
+        color: #fff;
+      }
+      .portfolio-title {
+        font-size: 24px;
+      }
+    }
+  }
+}
+.section-contact {
+  background: #111;
+  color: #fff;
+  .row {
+    justify-content: space-between;
+    gap: 50px;
+    align-items: baseline;
+    .pl-8 {
+      padding-left: 8%;
+    }
+  }
+  .contact-title {
+    text-transform: uppercase;
+  }
+  .contact-list {
+    padding-top: 30px;
+    gap: 20px;
+    .icon-contact {
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      color: #d43f52;
+      width: 50px;
+      height: 50px;
+      line-height: 45px;
+      text-align: center;
+      margin-right: 20px;
+      padding: 12px;
+    }
+  }
+  .form-control {
+    background: transparent;
+    border: 2px solid #999;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 8px 16px;
+
+    font-size: 14px;
+    color: #555;
+    background-image: none;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  }
+  input[type="submit"] {
+    background: #d43f52;
+    border: 2px solid transparent;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background: #fff;
+      color: #d43f52;
+    }
+  }
+  input:placeholder-shown {
+    font-weight: 600;
+  }
+}
+
+.section-copyright {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  p {
+    color: #999;
+    padding: 15px 0;
+  }
+  .socials-list {
+    padding: 35px 0 25px 0;
+    gap: 5px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 1px;
+      background: #fff;
+      margin: 17px 0;
+    }
+    .socials-item {
+      border-radius: 50%;
+      color: #606060;
+      text-decoration: none;
+      transition: all 0.4s ease-in-out;
+      text-align: center;
+      margin-right: 10px;
+      &:hover {
+        color: #d43f52;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .section {
+    padding: 50px 50px 60px 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-work .content .col {
+    width: 100%;
+  }
+  .section-postfolio {
+    .row {
+      .w-30 {
+        width: 30%;
+      }
+      .w-50 {
+        width: 47%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+  .section-home .content {
+    width: 100%;
+  }
+  .section {
+    padding: 25px 25px 30px 25px;
+  }
+  .row {
+    flex-wrap: wrap;
+  }
+  .col-1,
+  .col-2 {
+    width: 100%;
+  }
+  .section-postfolio {
+    .row {
+      gap: 10px;
+      .w-30 {
+        width: 100%;
+      }
+      .w-50 {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 13px;
+    .section-home {
+      .content {
+        h1 {
+          letter-spacing: 4px;
+          padding: 15px 25px;
+          margin: 20px 0;
+        }
+      }
+    }
+    .section-work .content .col .icon-work {
+      width: 65px;
+      height: 55px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
 }

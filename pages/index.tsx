@@ -2,6 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import HomeSection from "../components/modules/Home";
 import WorkSection from "../components/modules/Work";
+import AboutSection from "../components/modules/About";
+import PostFolioSection from "../components/modules/PostFolio";
+import ContactSection from "../components/modules/Contact";
+import CopyRightSection from "../components/modules/CopyRight";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +17,10 @@ const Home: NextPage = () => {
       </Head>
       <HomeSection />
       <WorkSection />
+      <AboutSection />
+      <PostFolioSection />
+      <ContactSection/>
+      <CopyRightSection/>
     </>
   );
 };
